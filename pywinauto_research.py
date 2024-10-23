@@ -1,3 +1,4 @@
 from pywinauto import Desktop
 
-dlg_desktop = Desktop(backend="uia").window(title = "Netflix", visible_only=False)
+app = Desktop(backend="uia").window(title="Netflix", visible_only=False)
+print(app.Properties.print_control_identifiers())
