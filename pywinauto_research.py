@@ -1,8 +1,10 @@
+import time
+
 from pywinauto import Desktop
 
-from pywinauto.application import Application
-app = Application(backend="uia").start('Netflix.exe')
+dlg_desktop = Desktop('uia').window(title = "Netflix", visible_only=False)
+dlg_desktop.print_control_identifiers()
 
+time.sleep(1)
 
-# app = Desktop(backend="uia").window(title="Netflix", visible_only=False)
-print(app.Properties.print_control_identifiers())
+print(dir(dlg_desktop.Hyperlink11.invoke()))
